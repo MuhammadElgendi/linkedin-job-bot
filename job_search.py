@@ -21,50 +21,254 @@ TOP_N = 10
 # في المناطق المستهدفة: شمال أوروبا (الأولوية الأولى)، الخليج، مصر، وباقي
 # أوروبا. غيّر القايمة دي حسب البلاد اللي إنت عايز تشتغل فيها.
 LINKEDIN_SEARCHES = [
-    # شمال أوروبا — الأولوية الأولى
-    {"keywords": "AI automation",             "location": "Switzerland"},
-    {"keywords": "AI automation specialist",  "location": "Switzerland"},
-    {"keywords": "AI automation",             "location": "Denmark"},
-    {"keywords": "AI automation",             "location": "Finland"},
-    {"keywords": "AI automation",             "location": "Sweden"},
-    {"keywords": "AI automation",             "location": "Norway"},
-    {"keywords": "n8n automation",            "location": "Switzerland"},
-    {"keywords": "AI business analyst",       "location": "Sweden"},
-    # الخليج
-    {"keywords": "AI automation specialist",  "location": "United Arab Emirates"},
-    {"keywords": "AI agentic developer",      "location": "United Arab Emirates"},
-    {"keywords": "RPA developer no-code",     "location": "United Arab Emirates"},
-    {"keywords": "AI automation",             "location": "Saudi Arabia"},
-    {"keywords": "business analyst AI",       "location": "Saudi Arabia"},
-    {"keywords": "AI business analyst",       "location": "United Arab Emirates"},
-    {"keywords": "AI marketing automation",   "location": "United Arab Emirates"},
-    {"keywords": "AI operations",             "location": "United Arab Emirates"},
-    {"keywords": "n8n automation",            "location": "United Arab Emirates"},
-    {"keywords": "Claude AI automation",      "location": "United Arab Emirates"},
-    {"keywords": "AI automation",             "location": "Qatar"},
-    {"keywords": "AI automation",             "location": "Kuwait"},
-    {"keywords": "AI automation",             "location": "Bahrain"},
-    {"keywords": "AI automation",             "location": "Oman"},
-    # مصر
-    {"keywords": "AI automation developer",   "location": "Egypt"},
-    {"keywords": "AI business analyst",       "location": "Egypt"},
-    {"keywords": "AI automation",             "location": "Egypt"},
-    # باقي أوروبا
-    {"keywords": "AI automation",             "location": "United Kingdom"},
-    {"keywords": "AI automation",             "location": "Ireland"},
-    {"keywords": "AI automation",             "location": "Germany"},
-    {"keywords": "AI automation",             "location": "France"},
-    {"keywords": "AI automation",             "location": "Netherlands"},
-    {"keywords": "AI automation",             "location": "Spain"},
-    {"keywords": "AI automation",             "location": "Portugal"},
-    {"keywords": "AI automation",             "location": "Italy"},
-    {"keywords": "AI automation",             "location": "Poland"},
-    {"keywords": "AI automation",             "location": "Belgium"},
-    # لفّة أخيرة على الريموت عالمياً — من غير فلتر بلد، ريموت بس
-    {"keywords": "AI automation",             "location": "Worldwide", "remote_only": True},
-    {"keywords": "AI automation specialist",  "location": "Worldwide", "remote_only": True},
-    {"keywords": "n8n automation",            "location": "Worldwide", "remote_only": True},
-    {"keywords": "AI business analyst",       "location": "Worldwide", "remote_only": True},
+
+    # ============================================================
+    # 🇦🇪 UAE — HIGH PRIORITY
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "United Arab Emirates"},
+    {"keywords": "Senior DevOps Engineer",         "location": "United Arab Emirates"},
+    {"keywords": "Cloud Engineer",                 "location": "United Arab Emirates"},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "United Arab Emirates"},
+    {"keywords": "Site Reliability Engineer",      "location": "United Arab Emirates"},
+    {"keywords": "SRE Engineer",                   "location": "United Arab Emirates"},
+    {"keywords": "Platform Engineer",              "location": "United Arab Emirates"},
+    {"keywords": "Infrastructure Engineer",        "location": "United Arab Emirates"},
+    {"keywords": "DevSecOps Engineer",             "location": "United Arab Emirates"},
+    {"keywords": "Cloud Architect",                "location": "United Arab Emirates"},
+
+
+    # ============================================================
+    # 🇸🇦 Saudi Arabia — HIGH PRIORITY
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "Saudi Arabia"},
+    {"keywords": "Senior DevOps Engineer",         "location": "Saudi Arabia"},
+    {"keywords": "Cloud Engineer",                 "location": "Saudi Arabia"},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "Saudi Arabia"},
+    {"keywords": "Site Reliability Engineer",      "location": "Saudi Arabia"},
+    {"keywords": "SRE Engineer",                   "location": "Saudi Arabia"},
+    {"keywords": "Platform Engineer",              "location": "Saudi Arabia"},
+    {"keywords": "Infrastructure Engineer",        "location": "Saudi Arabia"},
+    {"keywords": "DevSecOps Engineer",             "location": "Saudi Arabia"},
+    {"keywords": "Cloud Architect",                "location": "Saudi Arabia"},
+
+
+    # ============================================================
+    # 🇶🇦 Qatar
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "Qatar"},
+    {"keywords": "Senior DevOps Engineer",         "location": "Qatar"},
+    {"keywords": "Cloud Engineer",                 "location": "Qatar"},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "Qatar"},
+    {"keywords": "Site Reliability Engineer",      "location": "Qatar"},
+    {"keywords": "Platform Engineer",              "location": "Qatar"},
+    {"keywords": "Infrastructure Engineer",        "location": "Qatar"},
+
+
+    # ============================================================
+    # 🇰🇼 Kuwait
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "Kuwait"},
+    {"keywords": "Senior DevOps Engineer",         "location": "Kuwait"},
+    {"keywords": "Cloud Engineer",                 "location": "Kuwait"},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "Kuwait"},
+    {"keywords": "Site Reliability Engineer",      "location": "Kuwait"},
+    {"keywords": "Platform Engineer",              "location": "Kuwait"},
+    {"keywords": "Infrastructure Engineer",        "location": "Kuwait"},
+
+
+    # ============================================================
+    # 🇧🇭 Bahrain
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "Bahrain"},
+    {"keywords": "Senior DevOps Engineer",         "location": "Bahrain"},
+    {"keywords": "Cloud Engineer",                 "location": "Bahrain"},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "Bahrain"},
+    {"keywords": "Site Reliability Engineer",      "location": "Bahrain"},
+    {"keywords": "Platform Engineer",              "location": "Bahrain"},
+    {"keywords": "Infrastructure Engineer",        "location": "Bahrain"},
+
+
+    # ============================================================
+    # 🇴🇲 Oman
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "Oman"},
+    {"keywords": "Senior DevOps Engineer",         "location": "Oman"},
+    {"keywords": "Cloud Engineer",                 "location": "Oman"},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "Oman"},
+    {"keywords": "Site Reliability Engineer",      "location": "Oman"},
+    {"keywords": "Platform Engineer",              "location": "Oman"},
+    {"keywords": "Infrastructure Engineer",        "location": "Oman"},
+
+
+    # ============================================================
+    # 🇪🇬 Egypt
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "Egypt"},
+    {"keywords": "Senior DevOps Engineer",         "location": "Egypt"},
+    {"keywords": "Cloud Engineer",                 "location": "Egypt"},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "Egypt"},
+    {"keywords": "Site Reliability Engineer",      "location": "Egypt"},
+    {"keywords": "SRE Engineer",                   "location": "Egypt"},
+    {"keywords": "Platform Engineer",              "location": "Egypt"},
+    {"keywords": "Infrastructure Engineer",        "location": "Egypt"},
+    {"keywords": "DevSecOps Engineer",             "location": "Egypt"},
+    {"keywords": "Cloud Architect",                "location": "Egypt"},
+
+
+    # ============================================================
+    # 🇨🇭 Switzerland
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "Switzerland"},
+    {"keywords": "Senior DevOps Engineer",         "location": "Switzerland"},
+    {"keywords": "Cloud Engineer",                 "location": "Switzerland"},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "Switzerland"},
+    {"keywords": "Site Reliability Engineer",      "location": "Switzerland"},
+    {"keywords": "Platform Engineer",              "location": "Switzerland"},
+    {"keywords": "Infrastructure Engineer",        "location": "Switzerland"},
+
+
+    # ============================================================
+    # 🇩🇰 Denmark
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "Denmark"},
+    {"keywords": "Cloud Engineer",                 "location": "Denmark"},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "Denmark"},
+    {"keywords": "Site Reliability Engineer",      "location": "Denmark"},
+    {"keywords": "Platform Engineer",              "location": "Denmark"},
+
+
+    # ============================================================
+    # 🇸🇪 Sweden
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "Sweden"},
+    {"keywords": "Cloud Engineer",                 "location": "Sweden"},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "Sweden"},
+    {"keywords": "Site Reliability Engineer",      "location": "Sweden"},
+    {"keywords": "Platform Engineer",              "location": "Sweden"},
+
+
+    # ============================================================
+    # 🇫🇮 Finland
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "Finland"},
+    {"keywords": "Cloud Engineer",                 "location": "Finland"},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "Finland"},
+    {"keywords": "Site Reliability Engineer",      "location": "Finland"},
+    {"keywords": "Platform Engineer",              "location": "Finland"},
+
+
+    # ============================================================
+    # 🇳🇴 Norway
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "Norway"},
+    {"keywords": "Cloud Engineer",                 "location": "Norway"},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "Norway"},
+    {"keywords": "Site Reliability Engineer",      "location": "Norway"},
+    {"keywords": "Platform Engineer",              "location": "Norway"},
+
+
+    # ============================================================
+    # 🇳🇱 Netherlands
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "Netherlands"},
+    {"keywords": "Senior DevOps Engineer",         "location": "Netherlands"},
+    {"keywords": "Cloud Engineer",                 "location": "Netherlands"},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "Netherlands"},
+    {"keywords": "Site Reliability Engineer",      "location": "Netherlands"},
+    {"keywords": "Platform Engineer",              "location": "Netherlands"},
+
+
+    # ============================================================
+    # 🇩🇪 Germany
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "Germany"},
+    {"keywords": "Senior DevOps Engineer",         "location": "Germany"},
+    {"keywords": "Cloud Engineer",                 "location": "Germany"},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "Germany"},
+    {"keywords": "Site Reliability Engineer",      "location": "Germany"},
+    {"keywords": "Platform Engineer",              "location": "Germany"},
+    {"keywords": "Infrastructure Engineer",        "location": "Germany"},
+
+
+    # ============================================================
+    # 🇬🇧 United Kingdom
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "United Kingdom"},
+    {"keywords": "Senior DevOps Engineer",         "location": "United Kingdom"},
+    {"keywords": "Cloud Engineer",                 "location": "United Kingdom"},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "United Kingdom"},
+    {"keywords": "Site Reliability Engineer",      "location": "United Kingdom"},
+    {"keywords": "Platform Engineer",              "location": "United Kingdom"},
+    {"keywords": "Infrastructure Engineer",        "location": "United Kingdom"},
+
+
+    # ============================================================
+    # 🌍 WORLDWIDE — REMOTE
+    # ============================================================
+
+    {"keywords": "DevOps Engineer",                "location": "Worldwide", "remote_only": True},
+    {"keywords": "Senior DevOps Engineer",         "location": "Worldwide", "remote_only": True},
+    {"keywords": "Cloud Engineer",                 "location": "Worldwide", "remote_only": True},
+    {"keywords": "Cloud Infrastructure Engineer",  "location": "Worldwide", "remote_only": True},
+    {"keywords": "Site Reliability Engineer",      "location": "Worldwide", "remote_only": True},
+    {"keywords": "SRE Engineer",                   "location": "Worldwide", "remote_only": True},
+    {"keywords": "Platform Engineer",              "location": "Worldwide", "remote_only": True},
+    {"keywords": "Infrastructure Engineer",        "location": "Worldwide", "remote_only": True},
+    {"keywords": "DevSecOps Engineer",             "location": "Worldwide", "remote_only": True},
+    {"keywords": "Cloud Architect",                "location": "Worldwide", "remote_only": True},
+]
+LINKEDIN_SEARCHES = [
+    # UAE
+    {"keywords": "DevOps", "location": "United Arab Emirates"},
+    {"keywords": "Cloud Engineer", "location": "United Arab Emirates"},
+    {"keywords": "SRE", "location": "United Arab Emirates"},
+    {"keywords": "Platform Engineer", "location": "United Arab Emirates"},
+
+    # Saudi
+    {"keywords": "DevOps", "location": "Saudi Arabia"},
+    {"keywords": "Cloud Engineer", "location": "Saudi Arabia"},
+    {"keywords": "SRE", "location": "Saudi Arabia"},
+    {"keywords": "Platform Engineer", "location": "Saudi Arabia"},
+
+    # Egypt
+    {"keywords": "DevOps", "location": "Egypt"},
+    {"keywords": "Cloud Engineer", "location": "Egypt"},
+    {"keywords": "SRE", "location": "Egypt"},
+    {"keywords": "Platform Engineer", "location": "Egypt"},
+
+    # Europe
+    {"keywords": "DevOps", "location": "Germany"},
+    {"keywords": "DevOps", "location": "Netherlands"},
+    {"keywords": "DevOps", "location": "United Kingdom"},
+    {"keywords": "DevOps", "location": "Switzerland"},
+    {"keywords": "DevOps", "location": "Sweden"},
+    {"keywords": "Cloud Engineer", "location": "Germany"},
+    {"keywords": "Cloud Engineer", "location": "Netherlands"},
+    {"keywords": "Cloud Engineer", "location": "United Kingdom"},
+    {"keywords": "SRE", "location": "Germany"},
+    {"keywords": "SRE", "location": "Netherlands"},
+    {"keywords": "SRE", "location": "United Kingdom"},
+
+    # Remote
+    {"keywords": "DevOps", "location": "Worldwide", "remote_only": True},
+    {"keywords": "Cloud Engineer", "location": "Worldwide", "remote_only": True},
+    {"keywords": "SRE", "location": "Worldwide", "remote_only": True},
+    {"keywords": "Platform Engineer", "location": "Worldwide", "remote_only": True},
 ]
 
 # بحث في شركات معيّنة — بيجيب أي وظيفة مفتوحة في الشركات دي، وبعدين
@@ -85,11 +289,97 @@ COMPANY_SEARCHES = [
 # الوظيفة اللي بتيجي من بحث الشركات لازم يكون في عنوانها كلمة على الأقل من
 # دول عشان تتحسب مناسبة. ضيف الكلمات بتاعة مجالك إنت هنا.
 COMPANY_RELEVANCE_TITLE_WORDS = {
-    "automation", "ai", "agentic", "rpa", "analyst", "developer",
-    "engineer", "operations", "product", "data", "digital", "technical",
-    "software", "platform", "workflow", "process", "integration",
-    "solution", "consultant", "api", "system", "no-code", "low-code",
-    "marketing", "social", "n8n", "claude", "codex",
+    # DevOps
+    "devops",
+    "devops engineer",
+    "devops specialist",
+    "devops consultant",
+    "devops architect",
+
+    # Cloud
+    "cloud",
+    "cloud engineer",
+    "cloud infrastructure",
+    "cloud architect",
+    "cloud consultant",
+    "cloud operations",
+    "cloud platform",
+
+    # SRE / Reliability
+    "sre",
+    "site reliability",
+    "site reliability engineer",
+    "reliability engineer",
+    "production engineer",
+
+    # Infrastructure / Operations
+    "infrastructure",
+    "infrastructure engineer",
+    "infrastructure architect",
+    "platform engineer",
+    "platform engineering",
+    "systems engineer",
+    "systems administrator",
+    "system engineer",
+    "cloud operations",
+    "operations engineer",
+
+    # Kubernetes / Containers
+    "kubernetes",
+    "k8s",
+    "container",
+    "containers",
+    "docker",
+    "containerization",
+
+    # CI/CD & Automation
+    "ci/cd",
+    "cicd",
+    "continuous integration",
+    "continuous delivery",
+    "continuous deployment",
+    "automation engineer",
+    "release engineer",
+    "build engineer",
+
+    # Infrastructure as Code
+    "terraform",
+    "ansible",
+    "cloudformation",
+    "pulumi",
+    "infrastructure as code",
+    "iac",
+
+    # Major Cloud Platforms
+    "aws",
+    "amazon web services",
+    "azure",
+    "microsoft azure",
+    "gcp",
+    "google cloud",
+    "google cloud platform",
+    "oci",
+    "oracle cloud",
+
+    # Observability / Reliability
+    "observability",
+    "monitoring",
+    "logging",
+    "alerting",
+    "incident management",
+    "incident response",
+    "performance engineering",
+
+    # Security / Cloud Infrastructure
+    "cloud security",
+    "devsecops",
+    "security automation",
+
+    # General technical titles
+    "technical operations",
+    "technical infrastructure",
+    "infrastructure operations",
+    "platform operations",
 }
 
 LINKEDIN_HEADERS = {
@@ -105,45 +395,166 @@ LINKEDIN_HEADERS = {
 # ── حساب النقط ────────────────────────────────────────────────────────────────
 
 ROLE_SCORES = {
-    # أول عنصر هو الوظيفة رقم ١ في الأولوية — دالة score_job() بتاخد أول
-    # تطابق في العنوان، يعني الترتيب مهم. حط الوظيفة اللي بتحلم بيها الأول
-    # وبأعلى رقم، وخلّي الوظايف القريبة منها عالية بس تحتها.
-    "ai automation":         40,
-    "ai automation & business analyst": 38,
-    "ai business analyst":   30,
-    "ai marketing automation": 28,
-    "marketing automation":  24,
-    "ai ba":                 26,
-    "ai operations":         24,
-    "automation specialist": 25,
-    "workflow automation":   22,
-    "ai agentic":            25,
-    "agentic developer":     25,
-    "agentic engineer":      25,
-    "rpa developer":         20,
-    "rpa engineer":          20,
-    "robotic process":       18,
-    "no-code":               18,
-    "low-code":              18,
-    "automation consultant": 20,
-    "operations analyst":    18,
-    "business analyst":      18,
-    "ai product analyst":    18,
-    "automation engineer":   20,
-    "automation developer":  20,
-    "process automation":    18,
+    # Highest priority — core target roles
+    "devops engineer":             50,
+    "senior devops engineer":      50,
+    "devops":                      48,
+    "devops specialist":           46,
+    "devops consultant":            44,
+    "devops architect":             44,
+
+    # SRE / Reliability
+    "site reliability engineer":   48,
+    "site reliability":             46,
+    "sre engineer":                 46,
+    "sre":                          44,
+    "reliability engineer":        42,
+    "production engineer":          40,
+
+    # Cloud Infrastructure
+    "cloud infrastructure engineer": 46,
+    "cloud engineer":                44,
+    "cloud infrastructure":          42,
+    "cloud architect":               40,
+    "cloud operations engineer":     40,
+    "cloud operations":              38,
+    "cloud consultant":              36,
+
+    # Infrastructure
+    "infrastructure engineer":      42,
+    "infrastructure architect":     40,
+    "infrastructure specialist":    36,
+    "infrastructure operations":    36,
+
+    # Platform Engineering
+    "platform engineer":             42,
+    "platform engineering":          40,
+    "platform architect":            38,
+    "platform operations":           36,
+
+    # Kubernetes / Container Infrastructure
+    "kubernetes engineer":           42,
+    "container engineer":            36,
+    "container platform engineer":   40,
+
+    # DevSecOps
+    "devsecops engineer":            42,
+    "devsecops":                     40,
+
+    # Cloud / Systems Operations
+    "systems engineer":              32,
+    "system engineer":               30,
+    "cloud systems engineer":        38,
+    "systems administrator":         24,
+    "cloud administrator":           28,
+
+    # CI/CD / Release
+    "ci/cd engineer":                34,
+    "cicd engineer":                 34,
+    "release engineer":              30,
+    "build engineer":                26,
+
+    # Automation — useful but secondary
+    "automation engineer":           30,
+    "infrastructure automation":     34,
+    "cloud automation":              34,
+    "automation specialist":         22,
+
+    # General operations
+    "operations engineer":           28,
+    "technical operations":          26,
+    "cloud operations":              32,
 }
 
 SKILL_SCORES = {
-    "ai automation": 20, "n8n":     22, "make.com":  18, "integromat": 15,
-    "zapier":       12, "claude":    16, "anthropic":  14,
-    "codex":        14, "airtable":  10, "supabase":   10,
-    "whatsapp":      8, "chatbot":    8, "llm":         8,
-    "gpt":           6, "openai":     6, "python":      6,
-    "automation":   10, "workflow":   4, "ai agent":   10,
-    "ai ops":       12,
-}
+    # Cloud — very important
+    "aws":                    20,
+    "amazon web services":    20,
+    "azure":                  18,
+    "microsoft azure":        18,
+    "gcp":                    18,
+    "google cloud":           18,
+    "oracle cloud":           14,
+    "oci":                    14,
 
+    # Kubernetes / Containers
+    "kubernetes":             20,
+    "k8s":                    20,
+    "docker":                 16,
+    "containerd":             14,
+    "helm":                   14,
+    "openshift":              14,
+    "ecs":                    12,
+    "eks":                    16,
+    "aks":                    16,
+
+    # Infrastructure as Code
+    "terraform":              20,
+    "infrastructure as code": 18,
+    "iac":                    16,
+    "ansible":                16,
+    "cloudformation":         14,
+    "pulumi":                 14,
+
+    # CI/CD
+    "ci/cd":                  18,
+    "cicd":                   18,
+    "jenkins":                14,
+    "github actions":         16,
+    "gitlab ci":              14,
+    "gitlab":                 10,
+    "azure devops":           14,
+    "argocd":                 16,
+    "argo cd":                16,
+
+    # Linux / Systems
+    "linux":                  14,
+    "ubuntu":                 10,
+    "red hat":                10,
+    "rhel":                   10,
+    "bash":                   10,
+    "shell scripting":        10,
+
+    # Observability / SRE
+    "prometheus":             16,
+    "grafana":                14,
+    "datadog":                14,
+    "new relic":              12,
+    "cloudwatch":             14,
+    "observability":          18,
+    "monitoring":             12,
+    "logging":                10,
+    "alerting":               10,
+
+    # Networking
+    "networking":             10,
+    "vpc":                    12,
+    "load balancer":          10,
+    "dns":                    8,
+    "cdn":                    8,
+
+    # Security / DevSecOps
+    "devsecops":              18,
+    "cloud security":         16,
+    "iam":                    12,
+    "security automation":    14,
+
+    # Automation
+    "automation":             10,
+    "python":                  8,
+    "powershell":              6,
+    "scripting":               8,
+
+    # Databases / infrastructure services
+    "redis":                   5,
+    "postgresql":              5,
+    "mysql":                   5,
+
+    # Git / Version Control
+    "git":                     8,
+    "github":                  6,
+    "gitlab":                  6,
+}
 LOCATION_SCORES = {
     # شمال أوروبا — الأولوية الأولى، بنقط أعلى من أي منطقة تانية
     "switzerland": 26, "zurich": 26, "geneva": 26,
