@@ -122,100 +122,7 @@ LINKEDIN_SEARCHES = [
     {"keywords": "Cloud Architect",                "location": "Egypt"},
 
 
-    # ============================================================
-    # 🇨🇭 Switzerland
-    # ============================================================
-
-    {"keywords": "DevOps Engineer",                "location": "Switzerland"},
-    {"keywords": "Senior DevOps Engineer",         "location": "Switzerland"},
-    {"keywords": "Cloud Engineer",                 "location": "Switzerland"},
-    {"keywords": "Cloud Infrastructure Engineer",  "location": "Switzerland"},
-    {"keywords": "Site Reliability Engineer",      "location": "Switzerland"},
-    {"keywords": "Platform Engineer",              "location": "Switzerland"},
-    {"keywords": "Infrastructure Engineer",        "location": "Switzerland"},
-
-
-    # ============================================================
-    # 🇩🇰 Denmark
-    # ============================================================
-
-    {"keywords": "DevOps Engineer",                "location": "Denmark"},
-    {"keywords": "Cloud Engineer",                 "location": "Denmark"},
-    {"keywords": "Cloud Infrastructure Engineer",  "location": "Denmark"},
-    {"keywords": "Site Reliability Engineer",      "location": "Denmark"},
-    {"keywords": "Platform Engineer",              "location": "Denmark"},
-
-
-    # ============================================================
-    # 🇸🇪 Sweden
-    # ============================================================
-
-    {"keywords": "DevOps Engineer",                "location": "Sweden"},
-    {"keywords": "Cloud Engineer",                 "location": "Sweden"},
-    {"keywords": "Cloud Infrastructure Engineer",  "location": "Sweden"},
-    {"keywords": "Site Reliability Engineer",      "location": "Sweden"},
-    {"keywords": "Platform Engineer",              "location": "Sweden"},
-
-
-    # ============================================================
-    # 🇫🇮 Finland
-    # ============================================================
-
-    {"keywords": "DevOps Engineer",                "location": "Finland"},
-    {"keywords": "Cloud Engineer",                 "location": "Finland"},
-    {"keywords": "Cloud Infrastructure Engineer",  "location": "Finland"},
-    {"keywords": "Site Reliability Engineer",      "location": "Finland"},
-    {"keywords": "Platform Engineer",              "location": "Finland"},
-
-
-    # ============================================================
-    # 🇳🇴 Norway
-    # ============================================================
-
-    {"keywords": "DevOps Engineer",                "location": "Norway"},
-    {"keywords": "Cloud Engineer",                 "location": "Norway"},
-    {"keywords": "Cloud Infrastructure Engineer",  "location": "Norway"},
-    {"keywords": "Site Reliability Engineer",      "location": "Norway"},
-    {"keywords": "Platform Engineer",              "location": "Norway"},
-
-
-    # ============================================================
-    # 🇳🇱 Netherlands
-    # ============================================================
-
-    {"keywords": "DevOps Engineer",                "location": "Netherlands"},
-    {"keywords": "Senior DevOps Engineer",         "location": "Netherlands"},
-    {"keywords": "Cloud Engineer",                 "location": "Netherlands"},
-    {"keywords": "Cloud Infrastructure Engineer",  "location": "Netherlands"},
-    {"keywords": "Site Reliability Engineer",      "location": "Netherlands"},
-    {"keywords": "Platform Engineer",              "location": "Netherlands"},
-
-
-    # ============================================================
-    # 🇩🇪 Germany
-    # ============================================================
-
-    {"keywords": "DevOps Engineer",                "location": "Germany"},
-    {"keywords": "Senior DevOps Engineer",         "location": "Germany"},
-    {"keywords": "Cloud Engineer",                 "location": "Germany"},
-    {"keywords": "Cloud Infrastructure Engineer",  "location": "Germany"},
-    {"keywords": "Site Reliability Engineer",      "location": "Germany"},
-    {"keywords": "Platform Engineer",              "location": "Germany"},
-    {"keywords": "Infrastructure Engineer",        "location": "Germany"},
-
-
-    # ============================================================
-    # 🇬🇧 United Kingdom
-    # ============================================================
-
-    {"keywords": "DevOps Engineer",                "location": "United Kingdom"},
-    {"keywords": "Senior DevOps Engineer",         "location": "United Kingdom"},
-    {"keywords": "Cloud Engineer",                 "location": "United Kingdom"},
-    {"keywords": "Cloud Infrastructure Engineer",  "location": "United Kingdom"},
-    {"keywords": "Site Reliability Engineer",      "location": "United Kingdom"},
-    {"keywords": "Platform Engineer",              "location": "United Kingdom"},
-    {"keywords": "Infrastructure Engineer",        "location": "United Kingdom"},
-
+   
 
     # ============================================================
     # 🌍 WORLDWIDE — REMOTE
@@ -251,19 +158,7 @@ LINKEDIN_SEARCHES = [
     {"keywords": "SRE", "location": "Egypt"},
     {"keywords": "Platform Engineer", "location": "Egypt"},
 
-    # Europe
-    {"keywords": "DevOps", "location": "Germany"},
-    {"keywords": "DevOps", "location": "Netherlands"},
-    {"keywords": "DevOps", "location": "United Kingdom"},
-    {"keywords": "DevOps", "location": "Switzerland"},
-    {"keywords": "DevOps", "location": "Sweden"},
-    {"keywords": "Cloud Engineer", "location": "Germany"},
-    {"keywords": "Cloud Engineer", "location": "Netherlands"},
-    {"keywords": "Cloud Engineer", "location": "United Kingdom"},
-    {"keywords": "SRE", "location": "Germany"},
-    {"keywords": "SRE", "location": "Netherlands"},
-    {"keywords": "SRE", "location": "United Kingdom"},
-
+   
     # Remote
     {"keywords": "DevOps", "location": "Worldwide", "remote_only": True},
     {"keywords": "Cloud Engineer", "location": "Worldwide", "remote_only": True},
@@ -396,11 +291,11 @@ LINKEDIN_HEADERS = {
 
 ROLE_SCORES = {
     # Highest priority — core target roles
-    "devops engineer":             50,
-    "senior devops engineer":      50,
-    "devops":                      48,
-    "devops specialist":           46,
-    "devops consultant":            44,
+    "devops engineer":             100,
+    "senior devops engineer":      100,
+    "devops":                      100,
+    "devops specialist":           100,
+    "devops consultant":            100,
     "devops architect":             44,
 
     # SRE / Reliability
@@ -468,13 +363,13 @@ ROLE_SCORES = {
 
 SKILL_SCORES = {
     # Cloud — very important
-    "aws":                    20,
-    "amazon web services":    20,
-    "azure":                  18,
+    "aws":                    100,
+    "amazon web services":    100,
+    "azure":                  100,
     "microsoft azure":        18,
     "gcp":                    18,
     "google cloud":           18,
-    "oracle cloud":           14,
+    "oracle cloud":           100,
     "oci":                    14,
 
     # Kubernetes / Containers
@@ -557,38 +452,306 @@ SKILL_SCORES = {
 }
 LOCATION_SCORES = {
     # شمال أوروبا — الأولوية الأولى، بنقط أعلى من أي منطقة تانية
-    "switzerland": 26, "zurich": 26, "geneva": 26,
-    "denmark": 25, "copenhagen": 25,
-    "finland": 25, "helsinki": 25,
-    "sweden": 25, "stockholm": 25,
-    "norway": 25, "oslo": 25,
     "ae": 20, "uae": 20, "dubai": 20, "abu dhabi": 20, "sharjah": 20, "united arab emirates": 20,
-    "sa": 18, "saudi": 18, "riyadh": 18, "jeddah": 18, "saudi arabia": 18,
+    "sa": 108, "saudi": 108, "riyadh": 108, "jeddah": 108, "saudi arabia": 108,
     "qa": 16, "qatar": 16, "doha": 16,
     "kw": 15, "kuwait": 15,
     "bh": 15, "bahrain": 15,
     "om": 15, "oman": 15, "muscat": 15,
     "eg": 16, "egypt": 16, "cairo": 16,
     "worldwide": 15, "global": 15,
-    "united kingdom": 16, "uk": 16, "london": 16,
-    "ireland": 16, "dublin": 16,
-    "germany": 16, "berlin": 16, "munich": 16,
-    "france": 16, "paris": 16,
-    "netherlands": 16, "amsterdam": 16,
-    "spain": 16, "madrid": 16, "barcelona": 16,
-    "portugal": 16, "lisbon": 16,
-    "italy": 16, "milan": 16, "rome": 16,
-    "poland": 16, "warsaw": 16,
-    "belgium": 16, "brussels": 16,
     "remote": 14,
 }
 
 TARGET_COMPANIES = [
-    "maids", "justmop", "helperplace", "qureos", "bayzat", "huspy", "coraly",
-    "halan", "paymob", "instabug", "breadfast", "rabbit",
-    "g42", "presight", "careem", "noon", "talabat", "dubizzle",
-    "stc", "neom", "zain", "tamara",
-    "automattic", "zapier", "make.com", "n8n",
+
+    # ============================================================
+    # 🇪🇬 EGYPT — HIGH PRIORITY
+    # ============================================================
+
+    "vodafone egypt",
+    "orange egypt",
+    "etisalat egypt",
+    "e& egypt",
+    "telecom egypt",
+    "we",
+    "ibm egypt",
+    "microsoft egypt",
+    "amazon egypt",
+    "aws",
+    "oracle egypt",
+    "google egypt",
+
+    # Egyptian technology / fintech
+    "fawry",
+    "paymob",
+    "mnt-halan",
+    "valu",
+    "efinance",
+    "aman",
+    "contact financial",
+    "thndr",
+    "instabug",
+    "bey2ollak",
+    "swvl",
+    "breadfast",
+    "vezeeta",
+    "chefaa",
+    "mubasher",
+    "almentor",
+    "bosta",
+    "maxab",
+    "koinz",
+    "yalla fel sekka",
+
+    # Egyptian enterprise / IT / outsourcing
+    "vodafone intelligent solutions",
+    "orange business",
+    "etisalat by e&",
+    "valeocom",
+    "vale o",
+    "concentrix",
+    "vois",
+    "teleperformance",
+    "capgemini egypt",
+    "atos",
+    "dxctechnology",
+    "hcltech",
+    "cognizant",
+    "accenture egypt",
+    "ntt data",
+    "rackspace",
+    "link development",
+    "itworx",
+    "raya information technology",
+    "ejada",
+
+    # ============================================================
+    # 🇦🇪 UAE — VERY HIGH PRIORITY
+    # ============================================================
+
+    "g42",
+    "core42",
+    "presight",
+    "khazna data centers",
+    "space42",
+    "aiq",
+    "cpx",
+    "inception",
+    "m42",
+
+    "careem",
+    "noon",
+    "talabat",
+    "dubizzle",
+    "property finder",
+    "bayut",
+    "emaar",
+    "al-futtaim",
+
+    "e&",
+    "etisalat",
+    "du",
+    "du telecom",
+
+    "mubadala",
+    "adnoc",
+    "masdar",
+    "edge group",
+
+    # UAE fintech / technology
+    "tabby",
+    "tamara",
+    "magnati",
+    "network international",
+    "careem pay",
+    "liv.",
+    "wio bank",
+    "mashreq",
+    "emirates nbd",
+
+    # Cloud / IT
+    "microsoft uae",
+    "amazon web services",
+    "aws",
+    "oracle",
+    "google cloud",
+    "ibm",
+    "sap",
+    "dell technologies",
+    "red hat",
+    "zaintech",
+
+    # ============================================================
+    # 🇸🇦 SAUDI ARABIA — VERY HIGH PRIORITY
+    # ============================================================
+
+    "aramco",
+    "saudi aramco",
+    "stc",
+    "stc solutions",
+    "mobily",
+    "zain ksa",
+    "zain",
+    "sal",
+    "elm",
+    "sirar by stc",
+
+    # Saudi technology / cloud / AI
+    "humain",
+    "sdaia",
+    "lean business services",
+    "solutions by stc",
+    "misk",
+    "neom",
+    "the line",
+    "red sea global",
+    "diriyah gate",
+
+    # Saudi fintech / digital
+    "tamara",
+    "stc pay",
+    "urpay",
+    "sary",
+    "moyasar",
+    "geidea",
+
+    # Saudi enterprise / consulting
+    "accelera",
+    "accenture",
+    "deloitte",
+    "pwc",
+    "ey",
+    "kpmg",
+    "capgemini",
+    "tcs",
+    "hcltech",
+    "cognizant",
+    "infosys",
+
+    # Cloud / infrastructure
+    "aws",
+    "microsoft",
+    "google cloud",
+    "oracle",
+    "ibm",
+    "red hat",
+    "zaintech",
+
+    # ============================================================
+    # 🇶🇦 QATAR
+    # ============================================================
+
+    "ooredoo",
+    "ooredoo qatar",
+    "vodafone qatar",
+    "qatar airways",
+    "qatarenergy",
+    "qatar national bank",
+    "qnb",
+    "malomatia",
+    "microsoft qatar",
+    "aws",
+    "google cloud",
+    "oracle",
+    "zaintech",
+
+    # ============================================================
+    # 🇰🇼 KUWAIT
+    # ============================================================
+
+    "zain kuwait",
+    "zain",
+    "ooredoo kuwait",
+    "stc kuwait",
+    "agility",
+    "boubyan bank",
+    "kuwait finance house",
+    "nbk",
+    "national bank of kuwait",
+    "tap payments",
+    "xabier",
+    "microsoft kuwait",
+    "aws",
+    "oracle",
+    "zaintech",
+
+    # ============================================================
+    # 🇧🇭 BAHRAIN
+    # ============================================================
+
+    "batelco",
+    "stc bahrain",
+    "zain bahrain",
+    "benefit",
+    "bank abc",
+    "ila bank",
+    "ahli united bank",
+    "aws",
+    "microsoft",
+    "oracle",
+    "zaintech",
+
+    # ============================================================
+    # 🇴🇲 OMAN
+    # ============================================================
+
+    "omantel",
+    "ooredoo oman",
+    "vodafone oman",
+    "asyl",
+    "bank muscat",
+    "bank dhofar",
+    "oman air",
+    "omran",
+    "aws",
+    "microsoft",
+    "oracle",
+    "zaintech",
+
+    # ============================================================
+    # 🌍 REGIONAL / MENA TECH COMPANIES
+    # ============================================================
+
+    "zaintech",
+    "stc",
+    "ooredoo",
+    "careem",
+    "noon",
+    "talabat",
+    "emaar",
+    "mubadala",
+    "g42",
+    "core42",
+    "presight",
+    "khazna",
+    "aramco",
+    "neom",
+
+    # ============================================================
+    # ☁️ GLOBAL CLOUD / DEVOPS EMPLOYERS WITH MENA PRESENCE
+    # ============================================================
+
+    "amazon web services",
+    "aws",
+    "microsoft",
+    "google cloud",
+    "oracle",
+    "ibm",
+    "red hat",
+    "cloudflare",
+    "akamai",
+    "dell technologies",
+    "hewlett packard enterprise",
+    "hpe",
+    "cisco",
+    "vmware",
+    "broadcom",
+    "hashicorp",
+    "datadog",
+    "github",
+    "gitlab",
+    "kubernetes",
 ]
 
 LOCATION_CODE_MAP = {
