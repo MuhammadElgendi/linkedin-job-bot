@@ -808,10 +808,10 @@ def score_job(job: dict) -> int:
 
 
 def score_label(score: int) -> str:
-    if score >= 60: return "Excellent match"
-    if score >= 45: return "Strong match"
-    if score >= 30: return "Good match"
-    return "Possible match"
+    if score >= 60: return "🔥 مطابقة جامدة اوي"
+    if score >= 45: return "💪 مطابقة قوية"
+    if score >= 30: return "👍 مطابقة كويسة"
+    return "🤔 ممكن تجرب"
 
 
 # ── المنافسة (عدد المتقدمين) ──────────────────────────────────────────────────
@@ -945,10 +945,13 @@ def esc(text: str) -> str:
     return (text or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+RANK_MEDALS = {1: "🥇", 2: "🥈", 3: "🥉"}
+
+
 def format_job(rank: int, job: dict) -> str:
-    title      = esc(job.get("job_title") or "N/A")
-    company    = esc(job.get("employer_name") or "N/A")
-    location   = esc(job.get("job_city") or job.get("job_country") or "Unknown")
+    title      = esc(job.get("job_title") or "مش معروف")
+    company    = esc(job.get("employer_name") or "شركة مش معروفة")
+    location   = esc(job.get("job_city") or job.get("job_country") or "مش معروف")
     is_remote  = job.get("job_is_remote", False)
     is_target  = job.get("_company_match", False)
     score      = job.get("_score", score_job(job))
@@ -956,27 +959,33 @@ def format_job(rank: int, job: dict) -> str:
 
     title_lower = (job.get("job_title") or "").lower()
     if "hybrid" in title_lower or "hybrid" in location.lower():
-        work_mode = "Hybrid"
+        work_mode = "🏢 هايبرد"
     elif is_remote or "remote" in title_lower:
-        work_mode = "Remote"
+        work_mode = "🏠 شغل أونلاين"
     else:
-        work_mode = location
+        work_mode = f"📍 {location}"
 
     apply_url  = job.get("job_apply_link") or ""
     safe_url   = apply_url.replace("&", "&amp;")
-    apply_part = f' | <a href="{safe_url}">Apply on LinkedIn</a>' if safe_url else ""
-    badge      = " [TARGET CO.]" if is_target else ""
+    apply_part = f'\n👉 <a href="{safe_url}">دوس هنا وقدم بسرعة</a>' if safe_url else ""
+    badge      = " 🎯 <b>من الشركات اللي انت مركز عليها</b>" if is_target else ""
+
     if applicants is None:
         competition = ""
+    elif applicants <= 10:
+        competition = f"\n🟢 {applicants} متقدم بس — منافسة قليلة، اقفز عليها"
     elif applicants <= 25:
-        competition = f" | {applicants} applicants (low competition)"
+        competition = f"\n🟡 {applicants} متقدم — لسه منافسة معقولة"
     else:
-        competition = f" | {applicants} applicants"
+        competition = f"\n🔴 {applicants} متقدم — منافسة شديدة"
+
+    medal = RANK_MEDALS.get(rank, f"#{rank}")
 
     return (
-        f"<b>#{rank} {title}</b>{badge}\n"
-        f"{company} | {work_mode}\n"
-        f"<i>{score_label(score)} ({score} pts)</i>{competition}{apply_part}"
+        f"{medal} <b>{title}</b>{badge}\n"
+        f"🏢 {company}\n"
+        f"{work_mode}\n"
+        f"⭐ {score_label(score)} ({score} نقطة){competition}{apply_part}"
     )
 
 
@@ -1080,8 +1089,9 @@ def main():
     all_new = general_jobs + company_jobs
     if not all_new:
         send_telegram(
-            "<b>Daily Job Report - " + datetime.now().strftime("%b %d, %Y") + "</b>\n"
-            "No new LinkedIn jobs since last run. Check back tomorrow!"
+            "📋 <b>تقرير الوظايف بتاع النهاردة - " + datetime.now().strftime("%b %d, %Y") + "</b>\n\n"
+            "معملناش نلاقي وظايف جديدة من آخر مرة يا كبير 😅\n"
+            "منجرش ننزل، تعالى بكرة نبص تاني!"
         )
     else:
         # بيجيب عدد المتقدمين لأعلى وظايف كل مجموعة (بونص المنافسة
@@ -1092,24 +1102,32 @@ def main():
         top_company  = company_jobs[:5]
 
         date_str = datetime.now().strftime("%b %d, %Y")
+        total_found = len(top_general) + len(top_company)
         lines = [
-            f"<b>Daily Job Report - {date_str}</b>\n"
-            f"Remote only | North Europe + Gulf + Egypt + Europe | LinkedIn only\n"
+            f"📋 <b>تقرير الوظايف بتاع النهاردة - {date_str}</b>\n"
+            f"🌍 شغل أونلاين بس | الخليج ومصر وأوروبا | من لينكدإن\n"
+            f"✨ لقيتلك <b>{total_found}</b> وظيفة تستاهل تبص عليها\n"
         ]
 
         if top_general:
-            lines.append("<b>-- Best Role Matches --</b>")
+            lines.append("━━━━━━━━━━━━━━━━━━")
+            lines.append("🚀 <b>أحسن وظايف تناسبك</b>")
+            lines.append("━━━━━━━━━━━━━━━━━━")
             lines.append("")
             for i, job in enumerate(top_general, 1):
                 lines.append(format_job(i, job))
                 lines.append("")
 
         if top_company:
-            lines.append("<b>-- Target Company Openings --</b>")
+            lines.append("━━━━━━━━━━━━━━━━━━")
+            lines.append("🎯 <b>وظايف في الشركات اللي مركز عليها</b>")
+            lines.append("━━━━━━━━━━━━━━━━━━")
             lines.append("")
             for i, job in enumerate(top_company, 1):
                 lines.append(format_job(i, job))
                 lines.append("")
+
+        lines.append("بالتوفيق يا معلم، يلا اتقدملها بسرعة قبل ما حد يسبقك 💪")
 
         send_telegram("\n".join(lines))
         print(f"Telegram sent: {len(top_general)} role matches + {len(top_company)} company matches.")
