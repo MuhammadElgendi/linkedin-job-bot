@@ -32,7 +32,13 @@ jobs:
 
       # ملف seen_jobs.json هو ذاكرة البوت بالوظايف اللي بعتها قبل كده.
       # الكاش بينقله بين التشغيلات عشان مايجيلكش تكرار.
-
+      - name: Restore seen-jobs memory
+        uses: actions/cache@v4
+        with:
+          path: seen_jobs.json
+          key: seen-jobs-${{ github.run_id }}
+          restore-keys: |
+            seen-jobs-
 
       # بيشغّل البوت
       - name: Run the job search
