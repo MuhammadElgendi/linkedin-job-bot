@@ -209,8 +209,6 @@ COMPANY_RELEVANCE_TITLE_WORDS = {
 
     # Infrastructure / Operations
     "infrastructure",
-    "infrastructure engineer",
-    "infrastructure architect",
     "platform engineer",
     "platform engineering",
     "systems engineer",
@@ -270,11 +268,7 @@ COMPANY_RELEVANCE_TITLE_WORDS = {
     "devsecops",
     "security automation",
 
-    # General technical titles
-    "technical operations",
-    "technical infrastructure",
-    "infrastructure operations",
-    "platform operations",
+
 }
 
 LINKEDIN_HEADERS = {
