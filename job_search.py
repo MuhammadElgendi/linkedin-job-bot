@@ -961,7 +961,7 @@ def format_job(rank: int, job: dict) -> str:
     if "hybrid" in title_lower or "hybrid" in location.lower():
         work_mode = "🏢 هايبرد"
     elif is_remote or "remote" in title_lower:
-        work_mode = "🏠 شغل أونلاين"
+        work_mode = "🏠 شغل ريموت"
     else:
         work_mode = f"📍 {location}"
 
@@ -973,7 +973,7 @@ def format_job(rank: int, job: dict) -> str:
     if applicants is None:
         competition = ""
     elif applicants <= 10:
-        competition = f"\n🟢 {applicants} متقدم بس — منافسة قليلة، اقفز عليها"
+        competition = f"\n🟢 {applicants} متقدم بس — منافسة قليلة، قدم بسرعة يسطا"
     elif applicants <= 25:
         competition = f"\n🟡 {applicants} متقدم — لسه منافسة معقولة"
     else:
@@ -1105,7 +1105,7 @@ def main():
         total_found = len(top_general) + len(top_company)
         lines = [
             f"📋 <b>تقرير الوظايف بتاع النهاردة - {date_str}</b>\n"
-            f"🌍 شغل أونلاين بس | الخليج ومصر وأوروبا | من لينكدإن\n"
+            f"🌍 شغل ريموت بس | الخليج ومصر وأوروبا | من لينكدإن\n"
             f"✨ لقيتلك <b>{total_found}</b> وظيفة تستاهل تبص عليها\n"
         ]
 
